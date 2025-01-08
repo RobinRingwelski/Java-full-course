@@ -2,33 +2,47 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args){
-
-        // Compound interest calculator
+    public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
 
-        double principal;
-        double rate;
-        int timesCompounded;
-        int years;
-        double amount;
+        double num1;
+        double num2;
+        char operator;
+        double result = 0;
+        boolean validOperator = true;
 
-        System.out.print("Enter the principal amount: ");
-        principal = scanner.nextDouble();
+        System.out.print("Enter the first number: ");
+        num1 = scanner.nextDouble();
 
-        System.out.print("Enter the interest rate (in %): ");
-        rate = scanner.nextDouble() / 100;
+        System.out.print("Enter an operator (+, -, *, /, ^): ");
+        operator = scanner.next().charAt(0);
 
-        System.out.print("Enter the number of times compounded per year: ");
-        timesCompounded = scanner.nextInt();
+        System.out.print("Enter the second number: ");
+        num2 = scanner.nextDouble();
 
-        System.out.print("Enter the number of years: ");
-        years = scanner.nextInt();
+        switch (operator) {
+            case '+' -> result = num1 + num2;
+            case '-' -> result = num1 - num2;
+            case '*' -> result = num1 * num2;
+            case '/' -> {
+                if (num2 == 0) {
+                    System.out.println("Dont divide by zero!");
+                    validOperator = false;
+                } else {
+                    result = num1 / num2;
+                }
+            }
+            case '^' -> result = Math.pow(num1, num2);
+            default -> {
+                System.out.println("Invalid operator!");
+                validOperator = false;
+            }
+        }
 
-        amount = principal * Math.pow(1 + rate / timesCompounded, timesCompounded * years);
-
-        System.out.println("The total amount is: $" + amount + " after " + years + " years.");
+        if (validOperator) {
+            System.out.println(result);
+        }
 
         scanner.close();
     }
