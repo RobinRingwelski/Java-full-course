@@ -1,22 +1,21 @@
-import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
 
-        // for loop = execute a code a CERTAIN amount of time
+        // continue and break
 
-        Scanner scanner = new Scanner(System.in);
+        for (int i = 0; i < 15; i++){
 
-        System.out.print("How many seconds for the countdown?: ");
-        int start = scanner.nextInt();
+            if(i == 5){
+                continue;
+            }
 
-        for(int i = start; i > 0; i--){
-            System.out.println(i);
-            Thread.sleep(1000);
+            if(i == 11) {
+                break;
+            }
+
+            System.out.print(i + " ");
         }
-        System.out.println("Happy new year!");
-
-        scanner.close();
     }
 }
