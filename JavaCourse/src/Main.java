@@ -1,21 +1,35 @@
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        // continue and break
+        // Nested loop = a loop inside another loop :)
 
-        for (int i = 0; i < 15; i++){
+        Scanner scanner = new Scanner(System.in);
 
-            if(i == 5){
-                continue;
+        int rows;
+        int columns;
+        char symbol;
+
+        System.out.print("Enter an amount of rows: ");
+        rows = scanner.nextInt();
+
+        System.out.print("Enter an amount of columns: ");
+        columns = scanner.nextInt();
+
+        System.out.print("Enter the symbol: ");
+        symbol = scanner.next().charAt(0);
+
+        for (int i = 0; i < rows; i++){
+            for(int j = 0; j < columns; j++){
+                System.out.print(symbol);
             }
-
-            if(i == 11) {
-                break;
-            }
-
-            System.out.print(i + " ");
+            System.out.println();
         }
+
+
+
+        scanner.close();
     }
 }
