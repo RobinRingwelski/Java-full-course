@@ -1,35 +1,50 @@
-import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        // Nested loop = a loop inside another loop :)
+        // method = a block of reusable code that is executed when called ()
 
-        Scanner scanner = new Scanner(System.in);
 
-        int rows;
-        int columns;
-        char symbol;
+        String name = "Robin";
+        int age = 20;
 
-        System.out.print("Enter an amount of rows: ");
-        rows = scanner.nextInt();
+        happyBirthday(name, age);
 
-        System.out.print("Enter an amount of columns: ");
-        columns = scanner.nextInt();
+        System.out.println(square(3));
 
-        System.out.print("Enter the symbol: ");
-        symbol = scanner.next().charAt(0);
+        System.out.println(cube(3));
 
-        for (int i = 0; i < rows; i++){
-            for(int j = 0; j < columns; j++){
-                System.out.print(symbol);
-            }
-            System.out.println();
+        String fullName = getFullName("Spongebob", "Squarepants");
+        System.out.println(fullName);
+
+        if(ageCheck(age)){
+            System.out.println("You may sign up!");
+        }
+        else{
+            System.out.println("You must be 18+ to sign up!");
         }
 
-
-
-        scanner.close();
     }
+
+    static void happyBirthday(String name, int age){
+        System.out.println("Happy Birthday " + name + " You are " + age + " years old!");
+    }
+
+    static double square(double number){
+        return number * number;
+    }
+
+    static double cube(double number){
+        return number * number * number;
+    }
+
+    static String getFullName(String name, String lastName){
+        return name + " " + lastName;
+    }
+
+    static boolean ageCheck(int age){
+        return age >= 18;
+    }
+
 }
