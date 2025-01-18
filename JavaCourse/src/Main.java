@@ -1,25 +1,23 @@
 
 public class Main {
 
+    static int x = 3; // Class variable
+
     public static void main(String[] args) {
 
-        // Overloaded methods = methods that share the same name, but different parameters.
+        // variable scope = where a variable can be
 
-        String pizza = bakePizza("flat bread", "mozzarella", "pepperoni");
+        int x = 1; // Local variable
 
-        System.out.println(pizza);
+        doesSomething();
     }
 
-    static String bakePizza(String bread){
-        return bread + " pizza";
+    static void doesSomething(){
+
+        int x = 2; // Local variable
+
+        System.out.println(x);
     }
 
-    static String bakePizza(String bread, String cheese){
-        return cheese + " " + bread + " pizza";
-    }
-
-    static String bakePizza(String bread, String cheese, String topping){
-        return topping + " " + cheese + " " + bread + " pizza";
-    }
 
 }
