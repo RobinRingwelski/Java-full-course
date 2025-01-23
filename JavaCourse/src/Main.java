@@ -1,87 +1,32 @@
-import java.util.Scanner;
+import java.util.Arrays;
 
 public class Main {
 
-    static Scanner scanner = new Scanner(System.in);
-
     public static void main(String[] args) {
+        // Arrays
 
-        // Java Banking Program
+        String[] fruits = {"apple", "orange", "banana", "coconut"};
 
-        double balance = 0;
-        boolean isRunning = true;
-        int choice;
+        int numOfFruits = fruits.length;
 
-        while(isRunning) {
-            System.out.println("****************");
-            System.out.println("Banking Program!");
-            System.out.println("****************");
-            System.out.println("1. Show Balance");
-            System.out.println("2. Deposit");
-            System.out.println("3. Withdraw");
-            System.out.println("4. Exit");
-            System.out.println("****************");
+        System.out.println("Number of fruits in list: " + numOfFruits);
 
-            System.out.print("Enter your choice (1-4): ");
-            choice = scanner.nextInt();
 
-            switch(choice){
-                case 1 -> showBalance(balance);
-                case 2 -> balance += deposit();
-                case 3 -> balance -= withdraw(balance);
-                case 4 -> isRunning = false;
-                default -> System.out.println("INVALID CHOICE");
-            }
+        // Printing each fruit in the fruits array
+        for(int i = 0; i < fruits.length; i++) {
+            System.out.println(fruits[i]);
         }
 
-        System.out.println("");
-        System.out.println("****************");
-        System.out.println("Thank you! Have a nice day!");
-        System.out.println("****************");
+        // Can also be done like this with enhanced forloop
+        for(String fruit : fruits){
+            System.out.println(fruit);
+        }
 
-        scanner.close();
+        Arrays.sort(fruits);
+
+        for(int j = 0; j < fruits.length; j++) {
+            System.out.println(fruits[j]);
+        }
+
     }
-
-    static void showBalance(double balance){
-        System.out.println("****************");
-        System.out.printf("Balance: " + "$%.2f\n", + balance);
-    }
-
-    static double deposit(){
-        double amount;
-
-        System.out.print("Enter an amount to be deposited: ");
-        amount = scanner.nextDouble();
-
-        if(amount < 0){
-            System.out.println("****************");
-            System.out.println("Amount can't be negative!");
-            return 0;
-        }
-        else{
-            return amount;
-        }
-    }
-
-    static double withdraw(double balance){
-        double amount;
-
-        System.out.print("Enter an amount to be withdrawn: ");
-        amount = scanner.nextDouble();
-
-        if(amount > balance){
-            System.out.println("****************");
-            System.out.println("INSUFFICIENT FUNDS!");
-            return 0;
-        }
-        else if(amount < 0){
-            System.out.println("****************");
-            System.out.println("Amount can't be negative!");
-            return 0;
-        }
-        else{
-            return amount;
-        }
-    }
-
 }
