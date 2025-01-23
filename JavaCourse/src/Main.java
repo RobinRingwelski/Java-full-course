@@ -1,32 +1,31 @@
-import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        // Arrays
 
-        String[] fruits = {"apple", "orange", "banana", "coconut"};
+        Scanner scanner = new Scanner(System.in);
 
-        int numOfFruits = fruits.length;
+        int[] numbers = {1, 9, 2, 8, 3, 5, 4,};
+        String[] fruits = {"apple", "orange", "banana"};
+        boolean isFound = false;
 
-        System.out.println("Number of fruits in list: " + numOfFruits);
+        System.out.print("Enter a target fruit: ");
+        String target = scanner.nextLine();
 
 
-        // Printing each fruit in the fruits array
         for(int i = 0; i < fruits.length; i++) {
-            System.out.println(fruits[i]);
+            if (fruits[i].equals(target)){
+                System.out.println("Element found at index: " + i);
+                isFound = true;
+                break;
+            }
         }
 
-        // Can also be done like this with enhanced forloop
-        for(String fruit : fruits){
-            System.out.println(fruit);
+        if(!isFound){
+            System.out.println("Element not found in the array!");
         }
 
-        Arrays.sort(fruits);
-
-        for(int j = 0; j < fruits.length; j++) {
-            System.out.println(fruits[j]);
-        }
-
+        scanner.close();
     }
 }
