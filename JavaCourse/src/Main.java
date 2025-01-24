@@ -3,27 +3,28 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // varargs = allow methods to accept a varying # of arguments
-        //           makes methods more flexible, no need for overloaded methods
-        //           java will pack the arguments into an array
+        // 2D array = An array where each element is an array
+        // Useful for storing matrix of data
 
+        // 1D arrays
+        String[] fruits = {"apple", "orange", "banana"};
+        String[] vegetables = {"potato", "onion", "carrot"};
+        String[] meats = {"chicken", "pork", "beef", "fish"};
 
-        System.out.println(average(1, 2, 3, 4, 5, 5, 6, 7, 8, 9, 12));
+        // 2D array or grid/matrix (dosen't need to be the array name could also just be the array itself)
+        String[][] groceries = {fruits, vegetables, meats};
 
-    }
+        // changing something inside the 2D array you should use both indexes of the array and then the item
+        groceries[0][0] = "pineapple";
+        groceries[1][0] = "celery";
 
-    static double average(double... numbers){
-
-        double sum = 0;
-
-        if(numbers.length == 0){
-            return 0;
+        for(String[] foods : groceries){
+            for(String food : foods){
+                System.out.print(food + " ");
+            }
+            System.out.println();
         }
 
-        for(double number : numbers){
-            sum += number;
-        }
-        return sum / numbers.length;
     }
 
 }
