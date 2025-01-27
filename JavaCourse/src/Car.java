@@ -1,25 +1,16 @@
+public class Car {
 
-public class Car{
+    String model;
+    String color;
 
-    String make = "Peugeot";
-    String model = "107";
-    int year = 2009;
-    double price = 30000;
-    boolean isRunning = false;
-
-    void start(){
-        isRunning = true;
-        System.out.println("You start the engine");
+    // Constructor
+    Car(String model, String color){
+        this.model = model;
+        this.color = color;
     }
-    void stop(){
-        isRunning = false;
-        System.out.println("You turn off the engine");
-    }
+
     void drive(){
-        System.out.println("Your driving the " + make + " " + model);
-    }
-    void brake(){
-        System.out.println("You brake");
+        System.out.println("Your drive the " + this.color + " " + this.model);
     }
 
 }
