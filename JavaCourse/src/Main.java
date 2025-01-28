@@ -3,17 +3,21 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Static = Makes a variable or method belong to the class
-        //          rather than to any specific object
-        //          commonly used for utility methods or shared resources.
+        // Inheritance = One class inherits the attributes and methods
+        //               from another class.
+        //               Child <- Parent <- Grandparent
 
-        Friend friend1 = new Friend("Spongebob");
-        Friend friend2 = new Friend("Patrick");
-        Friend friend3 = new Friend("Sandy");
-        Friend friend4 = new Friend("Squidward");
-        Friend friend5 = new Friend("Gary");
+        Dog dog = new Dog();
+        Cat cat = new Cat();
+        Plant plant = new Plant();
 
-       Friend.showFriends();
+        System.out.println(dog.lives);
+        System.out.println(cat.lives);
+        System.out.println(plant.isAlive);
+
+        cat.speak();
+        dog.speak();
+        plant.photosynthesize();
 
     }
 
