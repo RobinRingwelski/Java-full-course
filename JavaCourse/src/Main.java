@@ -3,16 +3,21 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // .toString() = Method inherited from the Object class.
-        //               Used to return a string representation of an object.
-        //               By default, it returns a hash code as a unique identifier
-        //               It can be overridden to provide meaningful details/info.
+        // abstract = Used to define abstract classes and methods.
+        //            Abstraction is the process of hiding implementation details
+        //            and showing only the essential features;
+        //            Abstract classes CAN'T be instantiated directly
+        //            Can contain 'abstract' methods (Which must be implemented)
+        //            Can contain 'concrete' methods (which are inherited)
 
-        Car car1 = new Car("Toyota", "Aygo", 2009, "Red");
-        Car car2 = new Car("Ford", "Mustang", 2015, "Blue");
+        Circle circle = new Circle(3);
+        Triangle triangle = new Triangle(4, 5);
+        Rectangle rectangle = new Rectangle(6, 7);
 
-        System.out.println(car1);
-        System.out.println(car2);
+        System.out.println(circle.area());
+        System.out.println(triangle.area());
+        System.out.println(rectangle.area());
+
 
     }
 
