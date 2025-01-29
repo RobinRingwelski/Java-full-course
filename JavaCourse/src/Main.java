@@ -3,17 +3,16 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Method overriding = When a subclass provides its own
-        //                     implementation of a method that is already defined
-        //                     Allows for code reusability and give specific implementations.
+        // .toString() = Method inherited from the Object class.
+        //               Used to return a string representation of an object.
+        //               By default, it returns a hash code as a unique identifier
+        //               It can be overridden to provide meaningful details/info.
 
-        Dog dog = new Dog();
-        Cat cat = new Cat();
-        Fish fish = new Fish();
+        Car car1 = new Car("Toyota", "Aygo", 2009, "Red");
+        Car car2 = new Car("Ford", "Mustang", 2015, "Blue");
 
-        dog.move();
-        fish.move();
-        cat.move();
+        System.out.println(car1);
+        System.out.println(car2);
 
     }
 
