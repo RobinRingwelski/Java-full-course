@@ -3,15 +3,18 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Parent parent = new Parent("Robin", "Ringwelski");
-        Child child = new Child("Bob", "Scones");
+        // Interface = A blueprint for a class that specifies a set of abstract methods
+        //             that implementing classes MUST define.
+        //             Supports multiple inheritance-like behavior
 
-        System.out.println(child.firstname + " " + child.lastname);
+        Rabbit rabbit = new Rabbit();
+        Hawk hawk = new Hawk();
+        Fish fish = new Fish();
 
-        System.out.println(parent.firstname + " " + parent.lastname);
-
-        parent.yelling();
-        child.yelling();
+        rabbit.flee();
+        hawk.hunt();
+        fish.flee();
+        fish.hunt();
 
     }
 
