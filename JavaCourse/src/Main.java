@@ -1,30 +1,17 @@
-import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        // Runtime Polymorphism = When the method that gets executed is decided
-        //                        at runtime based on the actual type of the object.
+        // They help protect object data and add rules for accessing or modifying them.
+        // GETTERS = Methods that make a field READABLE
+        // SETTERS = Methods that make a field WRITEABLE
 
-        Animal animal;
+        Car car = new Car("Charger", "Yellow", 15000);
 
-        Scanner scanner = new Scanner(System.in);
+        car.setColor("Red");
+        car.setPrice(-1);
 
-        System.out.println("Do you want a cat or a dog? ");
-        String choice = scanner.next();
-
-        if(choice.equals("Cat") || choice.equals("cat")){
-            animal = new Cat();
-        }
-        else if(choice.equals("Dog") || choice.equals("dog")){
-            animal = new Dog();
-        }
-        else{
-            System.out.println("You did not choose between a cat or dog!");
-            return;
-        }
-
-        animal.speak();
+        System.out.println(car.getColor() + " " + car.getModel() + " " + car.getPrice());
     }
 }
