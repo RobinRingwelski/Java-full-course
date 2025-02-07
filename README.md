@@ -1,5 +1,5 @@
 # Java-full-course
-Full java course / Learning more java syntax
+Full java course / Learning/refreshing more java syntax and basic consepts
 
 Timestamp on video currently: 8:29:39 / 12:00:00
 
