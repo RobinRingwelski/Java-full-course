@@ -3,15 +3,21 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // They help protect object data and add rules for accessing or modifying them.
-        // GETTERS = Methods that make a field READABLE
-        // SETTERS = Methods that make a field WRITEABLE
+        // Aggregation = Represents a "has-a" relationship between objects.
+        //               One object contains another object as part of its structure.
+        //               but the contained object/s can exist independently.
 
-        Car car = new Car("Charger", "Yellow", 15000);
+        Book book1 = new Book("The Fellowship of the Ring", 423);
+        Book book2 = new Book("The Two Towers", 352);
+        Book book3 = new Book("The Return of the King", 416);
 
-        car.setColor("Red");
-        car.setPrice(-1);
+        Book[] books = {book1, book2, book3};
 
-        System.out.println(car.getColor() + " " + car.getModel() + " " + car.getPrice());
+        // Library object has book objects inside as a parameter
+        Library library = new Library("UTU Library", 1964, books);
+
+        library.displayInfo();
+
     }
+
 }
