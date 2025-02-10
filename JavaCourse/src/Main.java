@@ -3,15 +3,28 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Composition = Represents a "part-of" relationship between objects.
-        //               For example, an Engine is "part of" a Car.
-        //               Allows complex objects to be constructed from smaller objects.
+        // Wrapper classes = Allow primitive values (int, char, double, boolean)
+        //                   to be used as objects. "Wrap them in an object"
+        //                   Generally, don't wrap primitives unless you need an object.
+        //                   Allows use of Collections Framework and static Utility Methods.
 
-        Car car = new Car("Dodge", 1985, "V8");
 
-        System.out.println(car.model + " " + car.year + " " + car.engine.type);
+        // Deprecated method using wrapper classes
+        /*
+        Integer a = new Integer(123);
+        double b = new Double(3.15);
+        Character c = new Character('€');
+        Boolean d = new Boolean(true); */
 
-        car.start();
+        // New or standard version of using Wrapper classes:
+        // called Autoboxing
+        Integer a = 134;
+        Double b = 3.14;
+        Character c = '$';
+        Boolean d = true;
+
+        // Unboxing
+        int x = a;
+
     }
-
 }
