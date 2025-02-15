@@ -1,30 +1,26 @@
+import java.util.ArrayList;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        // Wrapper classes = Allow primitive values (int, char, double, boolean)
-        //                   to be used as objects. "Wrap them in an object"
-        //                   Generally, don't wrap primitives unless you need an object.
-        //                   Allows use of Collections Framework and static Utility Methods.
+        // ArrayList = A resizeable array that stores objects (autoboxing)
+        //             Arrays are fixed in size, but ArrayLists can change
 
+        ArrayList<String> fruits = new ArrayList<>();
 
-        // Deprecated method using wrapper classes
-        /*
-        Integer a = new Integer(123);
-        double b = new Double(3.15);
-        Character c = new Character('€');
-        Boolean d = new Boolean(true); */
+        fruits.add("Apple");
+        fruits.add("Orange");
+        fruits.add("Banana");
+        fruits.add("Pear");
 
-        // New or standard version of using Wrapper classes:
-        // called Autoboxing
-        Integer a = 134;
-        Double b = 3.14;
-        Character c = '$';
-        Boolean d = true;
+        fruits.remove(3);
 
-        // Unboxing
-        int x = a;
+        fruits.set(0, "Pineapple");
+
+        System.out.println(fruits);
+        System.out.println(fruits.get(0));
+        System.out.println(fruits.size());
 
     }
 }
