@@ -4,7 +4,7 @@ Full java course / Learning/refreshing more java syntax and basic consepts.
 Timestamp on video currently: 9:05:34 / 12:00:00
 
 Link: https://www.youtube.com/watch?v=xTtL8E4LzTQ
-Channel: Bro code (Please watch his content 10/10)
+Channel: Bro Code (Definitely recommending the courses)
 
 -Covered Topics & Video timestamps-
 
