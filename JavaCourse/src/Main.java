@@ -1,32 +1,35 @@
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        // Exception = An event that interrupts the normal flow of a program.
-        //             (Dividing by zero, file not found, mismatch input type)
-        //             Surround any dangerous code with a try{} block
-        //             try{}, catch{}, finally{}
+        // How to write a file using Java (4 popular options)
 
-        try(Scanner scanner = new Scanner(System.in);){
-            System.out.print("Enter a number: ");
-            int number = scanner.nextInt();
-            System.out.println(number);
+        // FileWriter = Good for small or medium-sized text files
+        // BufferedWriter = Better performance for large amounts of text
+        // PrintWriter = Best for structured data, like reports or logs
+        // FileOutputStream = Best for binary files (e.g, images, audio files)
+
+        String filePath = "C:\\Users\\Ringw\\Desktop\\test.txt";
+        String textContent = """
+                This file is pretty cool!
+                It is written as a multiline String :)
+                Therefor it is easier to write longer text!
+                """;
+
+        try(FileWriter writer = new FileWriter(filePath);){
+            writer.write(textContent);
+            System.out.println("File has been succesfully written!");
         }
-        catch(InputMismatchException e){
-            System.out.println("That wasn't a number!");
+        catch(FileNotFoundException e){
+            System.out.println("Could not locate file location!");
         }
-        catch(ArithmeticException e){
-            System.out.println("YOU CAN'T DIVIDE BY ZERO!");
+        catch (IOException e) {
+            System.out.println("Could not write file!");
         }
-        // Safety net because Exception in itself isn't specific.
-        catch(Exception e){
-            System.out.println("Something went wrong!");
-        }
-        finally{
-            System.out.println("This always executes!");
-        }
+
     }
 }
