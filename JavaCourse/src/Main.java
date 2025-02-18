@@ -1,34 +1,28 @@
+import java.io.*;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args)  {
 
-        // How to write a file using Java (4 popular options)
+        // How to read a file using Java (3 popular options)
 
-        // FileWriter = Good for small or medium-sized text files
-        // BufferedWriter = Better performance for large amounts of text
-        // PrintWriter = Best for structured data, like reports or logs
-        // FileOutputStream = Best for binary files (e.g, images, audio files)
+        // BufferedReader + FileReader: Best for reading text files line-by-line
+        // FileInputSteam: Best for binary files (e.g, images, audio files)
+        // RandomAccessFile: Best for read/write specific portions of a large file
 
         String filePath = "C:\\Users\\Ringw\\Desktop\\test.txt";
-        String textContent = """
-                This file is pretty cool!
-                It is written as a multiline String :)
-                Therefor it is easier to write longer text!
-                """;
+        try(BufferedReader reader = new BufferedReader(new FileReader(filePath))){
+            String line;
+            while((line = reader.readLine()) != null){
+                System.out.println(line);
+            }
 
-        try(FileWriter writer = new FileWriter(filePath);){
-            writer.write(textContent);
-            System.out.println("File has been succesfully written!");
+        } catch (FileNotFoundException e){
+            System.out.println("File could not be found!");
         }
-        catch(FileNotFoundException e){
-            System.out.println("Could not locate file location!");
-        }
-        catch (IOException e) {
-            System.out.println("Could not write file!");
+        catch (IOException e){
+            System.out.println("Something went wrong!");
         }
 
     }
