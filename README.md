@@ -1,7 +1,7 @@
 # Java-full-course
 Full java course / Learning/refreshing more java syntax and basic consepts.
 
-Timestamp on video currently: 9:28:52 / 12:00:00
+Timestamp on video currently: 10:11:43 / 12:00:00
 
 Link: https://www.youtube.com/watch?v=xTtL8E4LzTQ
 
