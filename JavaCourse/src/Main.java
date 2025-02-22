@@ -1,19 +1,22 @@
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class Main {
 
     public static void main(String[] args)  {
 
-        // How to work with DATES & TIMES using Java
-        // (LocalDate, LocalTime, LocalDateTime, UTC timestamp)
+        // Anonymous class = A class that doesn't have a name. Cannot be reused.
+        //                   Add custom behaviour without having to create a new class.
+        //                   Often used for one time uses (TimerTask, Runnable, callbacks)
 
-        // Custom format
-        LocalDateTime dateTime = LocalDateTime.now();
+        Dog dog1 = new Dog();
+        Dog dog2 = new Dog(){
+          @Override
+          void speak(){
+              System.out.println("Scooby Doo says booha!");
+          }
+        };
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-        String newDateTime = dateTime.format(formatter);
-        System.out.println(newDateTime);
+        dog1.speak();
+        dog2.speak();
 
     }
 }
