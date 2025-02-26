@@ -1,19 +1,30 @@
+import java.util.HashMap;
 
 public class Main {
 
     public static void main(String[] args)  {
 
-        // Generics = A concept where you can write a class, interface, or method
-        //            that is compatible with different data types.
-        //            <T> type parameter (placeholder that gets replaced with a real type)
-        //            <String> type argument (specifies the type)
+        // HashMap = A data structure that stores key-value pairs
+        //           Keys are unique, but Values can be duplicated
+        //           Does not maintain any order, but is memory efficient
+        //           HashMap<Key, Value>
 
-        Box<Integer> box = new Box<>();
-        Product<String, Double> product1 = new Product<>("Banana", 1.25);
-        Product<String, Integer> product2 = new Product<>("MovieTicket", 15);
+        HashMap<String, Double> map = new HashMap<>();
 
-        System.out.println("The first product is a " + product1.getItem() + " and it costs: " + product1.getPrice());
-        System.out.println("The second product is a " + product2.getItem() + " and it costs: " + product2.getPrice());
+        map.put("Apple", 0.50);
+        map.put("Orange", 0.75);
+        map.put("Banana", 0.25);
+        map.put("Coconut", 1.00);
+
+        //map.remove("Apple");
+        //System.out.println(map.get("coconut"));
+        //System.out.println(map.containsKey("Apple"));
+        //System.out.println(map.containsValue(1.00));
+        //System.out.println(map.size());
+
+        for(String key : map.keySet()){
+            System.out.println(key + " : €" + map.get(key));
+        }
 
     }
 }
