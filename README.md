@@ -1,7 +1,7 @@
 # Java-full-course
-Full java course / Learning/refreshing more java syntax and basic consepts.
+Full java course -> Learning/Refreshing java syntax and basic consepts.
 
-Timestamp on video currently: 10:52:09 / 12:00:00
+Completed course: 26-02-2025
 
 Link: https://www.youtube.com/watch?v=xTtL8E4LzTQ
 
