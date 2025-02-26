@@ -2,31 +2,27 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
 
-        // Enums = (Enumerations) A special kind of class that
-        //         represents a fixed set of constants.
-        //         They improve code readability and are easy to maintain.
-        //         More efficient with switches when comparing Strings.
+        // Threading = Allows a program to run multiple tasks simultaneously
+        //             Helps improve performance with time-consuming operations
+        //             (File I/O, network communications, or any background tasks)
+
+        // How to create a Thread
+        // Option 1. Extend the Thread class (simpler)
+        // Option 2. Implement the Runnable interface (better9
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("What day of the week is it?: ");
-        String response = scanner.nextLine().toUpperCase();
+        MyRunnable myRunnable = new MyRunnable();
+        Thread thread = new Thread(myRunnable);
+        thread.setDaemon(true);
+        thread.start();
 
-        try{
-            Day day = Day.valueOf(response);
+        System.out.println("You have 10 seconds to enter your name!");
 
-            switch(day){
-                case MONDAY,
-                     TUESDAY,
-                     WEDNESDAY,
-                     THURSDAY,
-                     FRIDAY -> System.out.println("It is a weekday!");
-                case SATURDAY, SUNDAY -> System.out.println("It is the weekend!");
-            }
-        } catch(IllegalArgumentException e){
-            System.out.println("Please enter a valid day!");
-        }
+        System.out.print("Enter your name:");
+        String name = scanner.nextLine();
+        System.out.println("Hello " + name);
 
         scanner.close();
     }
