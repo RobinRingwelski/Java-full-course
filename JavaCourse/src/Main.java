@@ -1,30 +1,33 @@
-import java.util.HashMap;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args)  {
 
-        // HashMap = A data structure that stores key-value pairs
-        //           Keys are unique, but Values can be duplicated
-        //           Does not maintain any order, but is memory efficient
-        //           HashMap<Key, Value>
+        // Enums = (Enumerations) A special kind of class that
+        //         represents a fixed set of constants.
+        //         They improve code readability and are easy to maintain.
+        //         More efficient with switches when comparing Strings.
 
-        HashMap<String, Double> map = new HashMap<>();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("What day of the week is it?: ");
+        String response = scanner.nextLine().toUpperCase();
 
-        map.put("Apple", 0.50);
-        map.put("Orange", 0.75);
-        map.put("Banana", 0.25);
-        map.put("Coconut", 1.00);
+        try{
+            Day day = Day.valueOf(response);
 
-        //map.remove("Apple");
-        //System.out.println(map.get("coconut"));
-        //System.out.println(map.containsKey("Apple"));
-        //System.out.println(map.containsValue(1.00));
-        //System.out.println(map.size());
-
-        for(String key : map.keySet()){
-            System.out.println(key + " : €" + map.get(key));
+            switch(day){
+                case MONDAY,
+                     TUESDAY,
+                     WEDNESDAY,
+                     THURSDAY,
+                     FRIDAY -> System.out.println("It is a weekday!");
+                case SATURDAY, SUNDAY -> System.out.println("It is the weekend!");
+            }
+        } catch(IllegalArgumentException e){
+            System.out.println("Please enter a valid day!");
         }
 
+        scanner.close();
     }
 }
